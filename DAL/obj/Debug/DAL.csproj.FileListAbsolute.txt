@@ -1,0 +1,12 @@
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\bin\Debug\DAL.dll.config
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\bin\Debug\DAL.dll
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\bin\Debug\DAL.pdb
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\bin\Debug\EntityFramework.dll
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\bin\Debug\EntityFramework.xml
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\obj\Debug\DAL.dll
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\obj\Debug\DAL.pdb
+C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

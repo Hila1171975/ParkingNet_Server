@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PARKING_NETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BANK_ACCOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="smallint" Nullable="false" />
+    <Property Name="OWNER_NAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BANK" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BRANCH" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ACCOUNT_NUMBER" Type="varchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PARKING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="smallint" Nullable="false" />
+    <Property Name="CITY_ID" Type="smallint" Nullable="false" />
+    <Property Name="STREET" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HOUSE_NUM" Type="smallint" />
+    <Property Name="PAY_PER_HOUR" Type="float" Nullable="false" />
+    <Property Name="ELECTRONIC_GATE" Type="bit" />
+    <Property Name="INDOOR" Type="bit" />
+    <Property Name="SHADY" Type="bit" />
+    <Property Name="SIZE_FOR" Type="varchar" MaxLength="30" />
+    <Property Name="CANCEL_TIME" Type="smallint" />
+    <Property Name="NOTES" Type="varchar" MaxLength="200" />
+    <Property Name="IMG1" Type="varchar" MaxLength="30" />
+    <Property Name="IMG2" Type="varchar" MaxLength="30" />
+    <Property Name="IMG3" Type="varchar" MaxLength="30" />
+    <Property Name="ACCOUNT_ID" Type="smallint" />
+  </EntityType>
+  <EntityType Name="RENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="smallint" Nullable="false" />
+    <Property Name="PARKING_ID" Type="smallint" Nullable="false" />
+    <Property Name="ENTRY_HOUR" Type="date" />
+    <Property Name="LEAVING_HOUR" Type="date" />
+    <Property Name="ENTRY_DATE" Type="date" />
+    <Property Name="LEAVING_DATE" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PHONE" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="AC">
+    <End Role="BANK_ACCOUNT" Type="Self.BANK_ACCOUNT" Multiplicity="0..1" />
+    <End Role="PARKING" Type="Self.PARKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANK_ACCOUNT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PARKING">
+        <PropertyRef Name="ACCOUNT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CID">
+    <End Role="CITY" Type="Self.CITY" Multiplicity="1" />
+    <End Role="PARKING" Type="Self.PARKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PARKING">
+        <PropertyRef Name="CITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PRI">
+    <End Role="PARKING" Type="Self.PARKING" Multiplicity="1" />
+    <End Role="RENT" Type="Self.RENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PARKING">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RENT">
+        <PropertyRef Name="PARKING_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="URB">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="BANK_ACCOUNT" Type="Self.BANK_ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BANK_ACCOUNT">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="URP">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="PARKING" Type="Self.PARKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PARKING">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="URR">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="RENT" Type="Self.RENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RENT">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PARKING_NETModelStoreContainer">
+    <EntitySet Name="BANK_ACCOUNT" EntityType="Self.BANK_ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CITY" EntityType="Self.CITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARKING" EntityType="Self.PARKING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RENT" EntityType="Self.RENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="AC" Association="Self.AC">
+      <End Role="BANK_ACCOUNT" EntitySet="BANK_ACCOUNT" />
+      <End Role="PARKING" EntitySet="PARKING" />
+    </AssociationSet>
+    <AssociationSet Name="CID" Association="Self.CID">
+      <End Role="CITY" EntitySet="CITY" />
+      <End Role="PARKING" EntitySet="PARKING" />
+    </AssociationSet>
+    <AssociationSet Name="PRI" Association="Self.PRI">
+      <End Role="PARKING" EntitySet="PARKING" />
+      <End Role="RENT" EntitySet="RENT" />
+    </AssociationSet>
+    <AssociationSet Name="URB" Association="Self.URB">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="BANK_ACCOUNT" EntitySet="BANK_ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="URP" Association="Self.URP">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="PARKING" EntitySet="PARKING" />
+    </AssociationSet>
+    <AssociationSet Name="URR" Association="Self.URR">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="RENT" EntitySet="RENT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
