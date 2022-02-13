@@ -26,9 +26,11 @@ namespace BL
 
 
         //הוספת חשבון בנק
-        public static void addBankAccount(BankAccountEntities b)
+        public static int addBankAccount(BankAccountEntities bank)
         {
-            BankAccountDal.addBankAccount(BankAccountEntities.ConvertToDB(b));
+            BankAccountDal.addBankAccount(BankAccountEntities.ConvertToDB(bank));
+            var b = BankAccountDal.GetBankAccountList().FindAll(x => x.ACCOUNT_NUMBER == bank.AccountNumber && x.BANK == bank.Bank && x.BRANCH == bank.Branch).FirstOrDefault();
+            return b.ID;
         }
       
 
