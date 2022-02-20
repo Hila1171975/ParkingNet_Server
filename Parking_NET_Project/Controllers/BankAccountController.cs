@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -33,12 +34,13 @@ namespace Parking_NET_Project.Controllers
         {
             try
             {
-                BankAccountBl.addBankAccount(b);
-                return Ok(true);
+                int id = BankAccountBl.addBankAccount(b);
+                return Ok(id);
             }
-            catch
+            catch(Exception e)
             {
-                return Ok(false);
+                Debug.WriteLine(e);
+                return Ok(-1);
             }
         }
 
