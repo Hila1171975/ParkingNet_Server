@@ -2,6 +2,8 @@
 using Entities;
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Web;
 using System.Web.Http;
 
 namespace Parking_NET_Project.Controllers
@@ -112,6 +114,31 @@ namespace Parking_NET_Project.Controllers
                 Debug.WriteLine(e);
                 return Ok(false);
             }
+        }
+
+        [Route("uploadImage")]
+        [HttpPost]
+        public string[] uploadImage()
+        {
+            var httpRequest = HttpContext.Current.Request;
+            string filePath = @"C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet Project\ParkingNET\src\assets\gallery\";
+            string name = "", fileName = "";
+            string[] filesNames = new string[3];
+
+            for (int i = 0; i < httpRequest.Files.Count; i++)
+            {
+                var postedFile = httpRequest.Files["myImage"+i];
+                if (postedFile != null)
+                {
+                    name = postedFile.FileName;
+                    name = name.Substring(0, name.IndexOf('.'));
+                    fileName = name.ToString() + Path.GetExtension(postedFile.FileName);
+                    filesNames[i] = fileName;
+                    if (!File.Exists(filePath + fileName))
+                        postedFile.SaveAs(filePath + fileName);
+                }
+            }
+            return filesNames;
         }
     }
 }
