@@ -18,15 +18,14 @@ namespace DAL
         public PARKING()
         {
             this.RENT = new HashSet<RENT>();
-            this.POINT = new HashSet<POINT>();
         }
     
         public short ID { get; set; }
         public short USER_ID { get; set; }
-        public short CITY_ID { get; set; }
-        public string STREET { get; set; }
-        public Nullable<short> HOUSE_NUM { get; set; }
+        public string ADRESS { get; set; }
         public double PAY_PER_HOUR { get; set; }
+        public double LAT { get; set; }
+        public double LAN { get; set; }
         public Nullable<bool> ELECTRONIC_GATE { get; set; }
         public Nullable<bool> INDOOR { get; set; }
         public Nullable<bool> SHADY { get; set; }
@@ -39,11 +38,8 @@ namespace DAL
         public Nullable<short> ACCOUNT_ID { get; set; }
     
         public virtual BANK_ACCOUNT BANK_ACCOUNT { get; set; }
-        public virtual CITY CITY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RENT> RENT { get; set; }
         public virtual USERS USERS { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<POINT> POINT { get; set; }
     }
 }

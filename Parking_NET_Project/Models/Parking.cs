@@ -9,9 +9,9 @@ namespace Parking_NET_Project.Models
     {
         public int ID { get; set; }                // קוד חניה
         public int userID { get; set; }            // קוד בעל החניה
-        public int cityID { get; set; }            // קוד עיר
-        public string street { get; set; }         // רחוב
-        public int houseNum { get; set; }          // מספר בית
+        public string adress { get; set; }         //כתובת חניה
+        public double lat { get; set; }            //מיקום חניה - X
+        public double lan { get; set; }            //מיקום חניה - Y
         public int payPerHour { get; set; }        // תשלום לשעה
         public bool electronicGate { get; set; }   // שער אלקטרוני
         public bool indoor { get; set; }           // שער אלקטרוני

@@ -54,14 +54,10 @@
     <Compile Include="BANK_ACCOUNT.cs">
       <DependentUpon>ParkingDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="CITY.cs">
-      <DependentUpon>ParkingDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CityDal.cs" />
-    <Compile Include="ParkingDal.cs" />
     <Compile Include="PARKING.cs">
       <DependentUpon>ParkingDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ParkingDal.cs" />
     <Compile Include="ParkingDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,17 +73,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ParkingDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="POINT.cs">
-      <DependentUpon>ParkingDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RENT.cs">
       <DependentUpon>ParkingDB.tt</DependentUpon>
     </Compile>
     <Compile Include="RentDal.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>ParkingDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="USERS.cs">
       <DependentUpon>ParkingDB.tt</DependentUpon>
     </Compile>

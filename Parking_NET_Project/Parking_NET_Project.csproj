@@ -92,7 +92,6 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BankAccountController.cs" />
-    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\ParkingController.cs" />
     <Compile Include="Controllers\RentController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -100,7 +99,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BankAccount.cs" />
-    <Compile Include="Models\City.cs" />
     <Compile Include="Models\Parking.cs" />
     <Compile Include="Models\Rent.cs" />
     <Compile Include="Models\Users.cs" />

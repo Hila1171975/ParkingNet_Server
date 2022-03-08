@@ -12,9 +12,9 @@ namespace Entities
         //  שמות כמו באנגולר 
         public short Id { get; set; }
         public short UserId { get; set; }
-        public short CityId { get; set; }
-        public string Street { get; set; }
-        public Nullable<short> HouseNum { get; set; }
+        public string Adress { get; set; }
+        public double Lat { get; set; }
+        public double Lan { get; set; }
         public double PayPerHour { get; set; }
         public Nullable<bool> ElectronicGate { get; set; }
         public Nullable<bool> Indoor { get; set; }
@@ -36,9 +36,9 @@ namespace Entities
             {
                 Id = p.ID,
                 UserId = p.USER_ID,
-                CityId = p.CITY_ID,
-                Street = p.STREET,
-                HouseNum = p.HOUSE_NUM,
+                Adress = p.ADRESS,
+                Lat = p.LAT,
+                Lan = p.LAN,
                 PayPerHour = p.PAY_PER_HOUR,
                 ElectronicGate = p.ELECTRONIC_GATE,
                 Indoor = p.INDOOR,
@@ -62,9 +62,9 @@ namespace Entities
             {
                 ID = p.Id,
                 USER_ID = p.UserId,
-                CITY_ID = p.CityId,
-                STREET = p.Street,
-                HOUSE_NUM = p.HouseNum,
+                ADRESS = p.Adress,
+                LAT = p.Lat,
+                LAN = p.Lan,
                 PAY_PER_HOUR = p.PayPerHour,
                 ELECTRONIC_GATE = p.ElectronicGate,
                 INDOOR = p.Indoor,

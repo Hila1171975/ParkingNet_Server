@@ -26,11 +26,8 @@ namespace DAL
         }
     
         public virtual DbSet<BANK_ACCOUNT> BANK_ACCOUNT { get; set; }
-        public virtual DbSet<CITY> CITY { get; set; }
         public virtual DbSet<PARKING> PARKING { get; set; }
         public virtual DbSet<RENT> RENT { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<USERS> USERS { get; set; }
-        public virtual DbSet<POINT> POINT { get; set; }
     }
 }

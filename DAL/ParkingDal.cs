@@ -36,9 +36,9 @@ namespace DAL
         {
             var up = db.PARKING.FirstOrDefault(x => x.ID == p.ID);
             up.USER_ID = p.USER_ID;
-            up.CITY_ID = p.USER_ID;
-            up.STREET = p.STREET;
-            up.HOUSE_NUM = p.HOUSE_NUM;
+            up.ADRESS = p.ADRESS;
+            up.LAT = p.LAT;
+            up.LAN = p.LAN;
             up.PAY_PER_HOUR = p.PAY_PER_HOUR;
             up.ELECTRONIC_GATE = p.ELECTRONIC_GATE;
             up.INDOOR = p.INDOOR;

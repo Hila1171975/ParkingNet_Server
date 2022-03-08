@@ -37,9 +37,9 @@ namespace DAL
             var up = db.RENT.FirstOrDefault(x => x.ID == r.ID);
             up.USER_ID = r.USER_ID;
             up.PARKING_ID = r.PARKING_ID;
-            up.ENTRY_HOUR = r.ENTRY_HOUR;
+            up.ENTERY_HOUR = r.ENTERY_HOUR;
             up.LEAVING_HOUR = r.LEAVING_HOUR;
-            up.ENTRY_DATE = r.ENTRY_DATE;
+            up.ENTERY_DATE = r.ENTERY_DATE;
             up.LEAVING_DATE = r.LEAVING_DATE;
 
             db.SaveChanges();

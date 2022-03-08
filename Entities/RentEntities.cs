@@ -28,9 +28,9 @@ namespace Entities
                 Id = r.ID,
                 UserId = r.USER_ID,
                 ParkingId=r.PARKING_ID,
-                EntryHour=r.ENTRY_HOUR,
+                EntryHour=r.ENTERY_HOUR,
                 LeavingHour=r.LEAVING_HOUR,
-                EntryDate=r.ENTRY_DATE,
+                EntryDate=r.ENTERY_DATE,
                 LeavingDate=r.LEAVING_DATE
             };
         }
@@ -44,9 +44,9 @@ namespace Entities
                 ID = r.Id,
                 USER_ID = r.Id,
                 PARKING_ID = r.ParkingId,
-                ENTRY_HOUR = r.EntryHour,
+                ENTERY_HOUR = r.EntryHour,
                 LEAVING_HOUR = r.LeavingHour,
-                ENTRY_DATE=r.EntryDate,
+                ENTERY_DATE=r.EntryDate,
                 LEAVING_DATE=r.LeavingHour
             };
         }

@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankAccountBl.cs" />
-    <Compile Include="CityBl.cs" />
     <Compile Include="FindParkingBl.cs" />
     <Compile Include="ParkingBl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

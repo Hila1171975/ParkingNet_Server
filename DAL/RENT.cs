@@ -17,9 +17,9 @@ namespace DAL
         public short ID { get; set; }
         public short USER_ID { get; set; }
         public short PARKING_ID { get; set; }
-        public System.DateTime ENTRY_HOUR { get; set; }
+        public System.DateTime ENTERY_HOUR { get; set; }
         public System.DateTime LEAVING_HOUR { get; set; }
-        public System.DateTime ENTRY_DATE { get; set; }
+        public System.DateTime ENTERY_DATE { get; set; }
         public System.DateTime LEAVING_DATE { get; set; }
     
         public virtual PARKING PARKING { get; set; }
