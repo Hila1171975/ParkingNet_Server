@@ -70,10 +70,21 @@
     <EntitySetMapping Name="USERS">
       <EntityTypeMapping TypeName="PARKING_NETModel.USERS">
         <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />
           <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
           <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POINT">
+      <EntityTypeMapping TypeName="PARKING_NETModel.POINT">
+        <MappingFragment StoreEntitySet="POINT">
+          <ScalarProperty Name="PARKING_ID" ColumnName="PARKING_ID" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

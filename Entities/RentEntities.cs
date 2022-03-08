@@ -13,10 +13,10 @@ namespace Entities
         public short Id { get; set; }
         public short UserId { get; set; }
         public short ParkingId { get; set; }
-        public Nullable<System.DateTime> EntryHour { get; set; }
-        public Nullable<System.DateTime> LeavingHour { get; set; }
-        public Nullable<System.DateTime> EntryDate { get; set; }
-        public Nullable<System.DateTime> LeavingDate { get; set; }
+        public DateTime EntryHour { get; set; }
+        public DateTime LeavingHour { get; set; }
+        public DateTime EntryDate { get; set; }
+        public DateTime LeavingDate { get; set; }
 
 
 

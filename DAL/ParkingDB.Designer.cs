@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\hila1\Desktop\פרויקט שנה ג\webAPI\Parking_NET_Project\DAL\ParkingDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\DAL\ParkingDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -18,6 +18,7 @@ namespace DAL
         public PARKING()
         {
             this.RENT = new HashSet<RENT>();
+            this.POINT = new HashSet<POINT>();
         }
     
         public short ID { get; set; }
@@ -42,5 +43,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RENT> RENT { get; set; }
         public virtual USERS USERS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<POINT> POINT { get; set; }
     }
 }

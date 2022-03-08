@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PARKING_NETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PARKING_NETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BANK_ACCOUNT">
           <Key>
             <PropertyRef Name="ID" />
@@ -44,6 +44,15 @@
           <Property Name="IMG3" Type="varchar" MaxLength="30" />
           <Property Name="ACCOUNT_ID" Type="smallint" />
         </EntityType>
+        <EntityType Name="POINT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="X" Type="float" Nullable="false" />
+          <Property Name="Y" Type="float" Nullable="false" />
+          <Property Name="PARKING_ID" Type="smallint" Nullable="false" />
+        </EntityType>
         <EntityType Name="RENT">
           <Key>
             <PropertyRef Name="ID" />
@@ -51,10 +60,10 @@
           <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="USER_ID" Type="smallint" Nullable="false" />
           <Property Name="PARKING_ID" Type="smallint" Nullable="false" />
-          <Property Name="ENTRY_HOUR" Type="date" />
-          <Property Name="LEAVING_HOUR" Type="date" />
-          <Property Name="ENTRY_DATE" Type="date" />
-          <Property Name="LEAVING_DATE" Type="date" />
+          <Property Name="ENTRY_HOUR" Type="date" Nullable="false" />
+          <Property Name="LEAVING_HOUR" Type="date" Nullable="false" />
+          <Property Name="ENTRY_DATE" Type="date" Nullable="false" />
+          <Property Name="LEAVING_DATE" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -74,6 +83,7 @@
           <Property Name="NAME" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="PASSWORD" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="PHONE" Type="varchar" MaxLength="10" />
+          <Property Name="MAIL" Type="varchar" MaxLength="30" />
         </EntityType>
         <Association Name="AC">
           <End Role="BANK_ACCOUNT" Type="Self.BANK_ACCOUNT" Multiplicity="0..1" />
@@ -96,6 +106,18 @@
             </Principal>
             <Dependent Role="PARKING">
               <PropertyRef Name="CITY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PID">
+          <End Role="PARKING" Type="Self.PARKING" Multiplicity="1" />
+          <End Role="POINT" Type="Self.POINT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARKING">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POINT">
+              <PropertyRef Name="PARKING_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -151,6 +173,7 @@
           <EntitySet Name="BANK_ACCOUNT" EntityType="Self.BANK_ACCOUNT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CITY" EntityType="Self.CITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PARKING" EntityType="Self.PARKING" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="POINT" EntityType="Self.POINT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RENT" EntityType="Self.RENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
@@ -161,6 +184,10 @@
           <AssociationSet Name="CID" Association="Self.CID">
             <End Role="CITY" EntitySet="CITY" />
             <End Role="PARKING" EntitySet="PARKING" />
+          </AssociationSet>
+          <AssociationSet Name="PID" Association="Self.PID">
+            <End Role="PARKING" EntitySet="PARKING" />
+            <End Role="POINT" EntitySet="POINT" />
           </AssociationSet>
           <AssociationSet Name="PRI" Association="Self.PRI">
             <End Role="PARKING" EntitySet="PARKING" />
@@ -179,8 +206,7 @@
             <End Role="RENT" EntitySet="RENT" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PARKING_NETModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -229,6 +255,7 @@
           <NavigationProperty Name="CITY" Relationship="Self.CID" FromRole="PARKING" ToRole="CITY" />
           <NavigationProperty Name="RENT" Relationship="Self.PRI" FromRole="PARKING" ToRole="RENT" />
           <NavigationProperty Name="USERS" Relationship="Self.URP" FromRole="PARKING" ToRole="USERS" />
+          <NavigationProperty Name="POINT" Relationship="PARKING_NETModel.PID" FromRole="PARKING" ToRole="POINT" />
         </EntityType>
         <EntityType Name="RENT">
           <Key>
@@ -237,10 +264,10 @@
           <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USER_ID" Type="Int16" Nullable="false" />
           <Property Name="PARKING_ID" Type="Int16" Nullable="false" />
-          <Property Name="ENTRY_HOUR" Type="DateTime" Precision="0" />
-          <Property Name="LEAVING_HOUR" Type="DateTime" Precision="0" />
-          <Property Name="ENTRY_DATE" Type="DateTime" Precision="0" />
-          <Property Name="LEAVING_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ENTRY_HOUR" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="LEAVING_HOUR" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="ENTRY_DATE" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="LEAVING_DATE" Type="DateTime" Precision="0" Nullable="false" />
           <NavigationProperty Name="PARKING" Relationship="Self.PRI" FromRole="RENT" ToRole="PARKING" />
           <NavigationProperty Name="USERS" Relationship="Self.URR" FromRole="RENT" ToRole="USERS" />
         </EntityType>
@@ -265,6 +292,7 @@
           <NavigationProperty Name="BANK_ACCOUNT" Relationship="Self.URB" FromRole="USERS" ToRole="BANK_ACCOUNT" />
           <NavigationProperty Name="PARKING" Relationship="Self.URP" FromRole="USERS" ToRole="PARKING" />
           <NavigationProperty Name="RENT" Relationship="Self.URR" FromRole="USERS" ToRole="RENT" />
+          <Property Name="MAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="AC">
           <End Role="BANK_ACCOUNT" Type="Self.BANK_ACCOUNT" Multiplicity="0..1" />
@@ -369,7 +397,34 @@
             <End Role="USERS" EntitySet="USERS" />
             <End Role="RENT" EntitySet="RENT" />
           </AssociationSet>
+          <EntitySet Name="POINT" EntityType="PARKING_NETModel.POINT" />
+          <AssociationSet Name="PID" Association="PARKING_NETModel.PID">
+            <End Role="PARKING" EntitySet="PARKING" />
+            <End Role="POINT" EntitySet="POINT" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="POINT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="X" Type="Double" Nullable="false" />
+          <Property Name="Y" Type="Double" Nullable="false" />
+          <Property Name="PARKING_ID" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="PARKING" Relationship="PARKING_NETModel.PID" FromRole="POINT" ToRole="PARKING" />
+        </EntityType>
+        <Association Name="PID">
+          <End Type="PARKING_NETModel.PARKING" Role="PARKING" Multiplicity="1" />
+          <End Type="PARKING_NETModel.POINT" Role="POINT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARKING">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="POINT">
+              <PropertyRef Name="PARKING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -445,10 +500,21 @@
           <EntitySetMapping Name="USERS">
             <EntityTypeMapping TypeName="PARKING_NETModel.USERS">
               <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
                 <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POINT">
+            <EntityTypeMapping TypeName="PARKING_NETModel.POINT">
+              <MappingFragment StoreEntitySet="POINT">
+                <ScalarProperty Name="PARKING_ID" ColumnName="PARKING_ID" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

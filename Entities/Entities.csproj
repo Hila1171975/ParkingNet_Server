@@ -50,6 +50,7 @@
     <Compile Include="BankAccountEntities.cs" />
     <Compile Include="CityEntities.cs" />
     <Compile Include="ParkingEntities.cs" />
+    <Compile Include="PointEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentEntities.cs" />
     <Compile Include="UsersEntities.cs" />

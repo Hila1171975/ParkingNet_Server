@@ -31,5 +31,6 @@ namespace DAL
         public virtual DbSet<RENT> RENT { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<USERS> USERS { get; set; }
+        public virtual DbSet<POINT> POINT { get; set; }
     }
 }

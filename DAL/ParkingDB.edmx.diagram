@@ -17,6 +17,8 @@
         <AssociationConnector Association="PARKING_NETModel.PRI" ManuallyRouted="false" />
         <AssociationConnector Association="PARKING_NETModel.URP" ManuallyRouted="false" />
         <AssociationConnector Association="PARKING_NETModel.URR" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PARKING_NETModel.POINT" Width="1.5" PointX="7.5" PointY="6.625" />
+        <AssociationConnector Association="PARKING_NETModel.PID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
