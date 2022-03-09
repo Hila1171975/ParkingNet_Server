@@ -30,3 +30,9 @@ C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debu
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debug\BL.dll
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debug\BL.pdb
+C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\bin\Debug\GoogleApi.dll
+C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\bin\Debug\GoogleApi.xml
+C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\bin\Debug\Newtonsoft.Json.xml

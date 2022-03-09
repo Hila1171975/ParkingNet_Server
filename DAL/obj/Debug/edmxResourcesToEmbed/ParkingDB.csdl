@@ -11,15 +11,7 @@
     <Property Name="BRANCH" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ACCOUNT_NUMBER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="PARKING" Relationship="Self.AC" FromRole="BANK_ACCOUNT" ToRole="PARKING" />
-    <NavigationProperty Name="USERS" Relationship="Self.URB" FromRole="BANK_ACCOUNT" ToRole="USERS" />
-  </EntityType>
-  <EntityType Name="CITY">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="PARKING" Relationship="Self.CID" FromRole="CITY" ToRole="PARKING" />
+    <NavigationProperty Name="USERS" Relationship="Self.UR_B" FromRole="BANK_ACCOUNT" ToRole="USERS" />
   </EntityType>
   <EntityType Name="PARKING">
     <Key>
@@ -27,10 +19,10 @@
     </Key>
     <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="USER_ID" Type="Int16" Nullable="false" />
-    <Property Name="CITY_ID" Type="Int16" Nullable="false" />
-    <Property Name="STREET" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="HOUSE_NUM" Type="Int16" />
+    <Property Name="ADRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PAY_PER_HOUR" Type="Double" Nullable="false" />
+    <Property Name="LAT" Type="Double" Nullable="false" />
+    <Property Name="LAN" Type="Double" Nullable="false" />
     <Property Name="ELECTRONIC_GATE" Type="Boolean" />
     <Property Name="INDOOR" Type="Boolean" />
     <Property Name="SHADY" Type="Boolean" />
@@ -42,10 +34,8 @@
     <Property Name="IMG3" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="ACCOUNT_ID" Type="Int16" />
     <NavigationProperty Name="BANK_ACCOUNT" Relationship="Self.AC" FromRole="PARKING" ToRole="BANK_ACCOUNT" />
-    <NavigationProperty Name="CITY" Relationship="Self.CID" FromRole="PARKING" ToRole="CITY" />
-    <NavigationProperty Name="RENT" Relationship="Self.PRI" FromRole="PARKING" ToRole="RENT" />
-    <NavigationProperty Name="USERS" Relationship="Self.URP" FromRole="PARKING" ToRole="USERS" />
-    <NavigationProperty Name="POINT" Relationship="PARKING_NETModel.PID" FromRole="PARKING" ToRole="POINT" />
+    <NavigationProperty Name="RENT" Relationship="Self.PAI" FromRole="PARKING" ToRole="RENT" />
+    <NavigationProperty Name="USERS" Relationship="Self.UR_P" FromRole="PARKING" ToRole="USERS" />
   </EntityType>
   <EntityType Name="RENT">
     <Key>
@@ -54,22 +44,12 @@
     <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="USER_ID" Type="Int16" Nullable="false" />
     <Property Name="PARKING_ID" Type="Int16" Nullable="false" />
-    <Property Name="ENTRY_HOUR" Type="DateTime" Precision="0" Nullable="false" />
-    <Property Name="LEAVING_HOUR" Type="DateTime" Precision="0" Nullable="false" />
-    <Property Name="ENTRY_DATE" Type="DateTime" Precision="0" Nullable="false" />
-    <Property Name="LEAVING_DATE" Type="DateTime" Precision="0" Nullable="false" />
-    <NavigationProperty Name="PARKING" Relationship="Self.PRI" FromRole="RENT" ToRole="PARKING" />
-    <NavigationProperty Name="USERS" Relationship="Self.URR" FromRole="RENT" ToRole="USERS" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ENTERY_HOUR" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LEAVING_HOUR" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ENTERY_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LEAVING_DATE" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="PARKING" Relationship="Self.PAI" FromRole="RENT" ToRole="PARKING" />
+    <NavigationProperty Name="USERS" Relationship="Self.UR_R" FromRole="RENT" ToRole="USERS" />
   </EntityType>
   <EntityType Name="USERS">
     <Key>
@@ -78,11 +58,10 @@
     <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PHONE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="BANK_ACCOUNT" Relationship="Self.URB" FromRole="USERS" ToRole="BANK_ACCOUNT" />
-    <NavigationProperty Name="PARKING" Relationship="Self.URP" FromRole="USERS" ToRole="PARKING" />
-    <NavigationProperty Name="RENT" Relationship="Self.URR" FromRole="USERS" ToRole="RENT" />
-    <Property Name="MAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BANK_ACCOUNT" Relationship="Self.UR_B" FromRole="USERS" ToRole="BANK_ACCOUNT" />
+    <NavigationProperty Name="PARKING" Relationship="Self.UR_P" FromRole="USERS" ToRole="PARKING" />
+    <NavigationProperty Name="RENT" Relationship="Self.UR_R" FromRole="USERS" ToRole="RENT" />
   </EntityType>
   <Association Name="AC">
     <End Role="BANK_ACCOUNT" Type="Self.BANK_ACCOUNT" Multiplicity="0..1" />
@@ -96,7 +75,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="URB">
+  <Association Name="UR_B">
     <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
     <End Role="BANK_ACCOUNT" Type="Self.BANK_ACCOUNT" Multiplicity="*" />
     <ReferentialConstraint>
@@ -108,19 +87,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="CID">
-    <End Role="CITY" Type="Self.CITY" Multiplicity="1" />
-    <End Role="PARKING" Type="Self.PARKING" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CITY">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="PARKING">
-        <PropertyRef Name="CITY_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PRI">
+  <Association Name="PAI">
     <End Role="PARKING" Type="Self.PARKING" Multiplicity="1" />
     <End Role="RENT" Type="Self.RENT" Multiplicity="*" />
     <ReferentialConstraint>
@@ -132,7 +99,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="URP">
+  <Association Name="UR_P">
     <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
     <End Role="PARKING" Type="Self.PARKING" Multiplicity="*" />
     <ReferentialConstraint>
@@ -144,7 +111,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="URR">
+  <Association Name="UR_R">
     <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
     <End Role="RENT" Type="Self.RENT" Multiplicity="*" />
     <ReferentialConstraint>
@@ -158,61 +125,28 @@
   </Association>
   <EntityContainer Name="PARKING_NETEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BANK_ACCOUNT" EntityType="Self.BANK_ACCOUNT" />
-    <EntitySet Name="CITY" EntityType="Self.CITY" />
     <EntitySet Name="PARKING" EntityType="Self.PARKING" />
     <EntitySet Name="RENT" EntityType="Self.RENT" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="USERS" EntityType="Self.USERS" />
     <AssociationSet Name="AC" Association="Self.AC">
       <End Role="BANK_ACCOUNT" EntitySet="BANK_ACCOUNT" />
       <End Role="PARKING" EntitySet="PARKING" />
     </AssociationSet>
-    <AssociationSet Name="URB" Association="Self.URB">
+    <AssociationSet Name="UR_B" Association="Self.UR_B">
       <End Role="USERS" EntitySet="USERS" />
       <End Role="BANK_ACCOUNT" EntitySet="BANK_ACCOUNT" />
     </AssociationSet>
-    <AssociationSet Name="CID" Association="Self.CID">
-      <End Role="CITY" EntitySet="CITY" />
-      <End Role="PARKING" EntitySet="PARKING" />
-    </AssociationSet>
-    <AssociationSet Name="PRI" Association="Self.PRI">
+    <AssociationSet Name="PAI" Association="Self.PAI">
       <End Role="PARKING" EntitySet="PARKING" />
       <End Role="RENT" EntitySet="RENT" />
     </AssociationSet>
-    <AssociationSet Name="URP" Association="Self.URP">
+    <AssociationSet Name="UR_P" Association="Self.UR_P">
       <End Role="USERS" EntitySet="USERS" />
       <End Role="PARKING" EntitySet="PARKING" />
     </AssociationSet>
-    <AssociationSet Name="URR" Association="Self.URR">
+    <AssociationSet Name="UR_R" Association="Self.UR_R">
       <End Role="USERS" EntitySet="USERS" />
       <End Role="RENT" EntitySet="RENT" />
-    </AssociationSet>
-    <EntitySet Name="POINT" EntityType="PARKING_NETModel.POINT" />
-    <AssociationSet Name="PID" Association="PARKING_NETModel.PID">
-      <End Role="PARKING" EntitySet="PARKING" />
-      <End Role="POINT" EntitySet="POINT" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="POINT">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="X" Type="Double" Nullable="false" />
-    <Property Name="Y" Type="Double" Nullable="false" />
-    <Property Name="PARKING_ID" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="PARKING" Relationship="PARKING_NETModel.PID" FromRole="POINT" ToRole="PARKING" />
-  </EntityType>
-  <Association Name="PID">
-    <End Type="PARKING_NETModel.PARKING" Role="PARKING" Multiplicity="1" />
-    <End Type="PARKING_NETModel.POINT" Role="POINT" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PARKING">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="POINT">
-        <PropertyRef Name="PARKING_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>
