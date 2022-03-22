@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BankAccountController.cs" />
+    <Compile Include="Controllers\FindParkingController.cs" />
     <Compile Include="Controllers\ParkingController.cs" />
     <Compile Include="Controllers\RentController.cs" />
     <Compile Include="Controllers\UserController.cs" />

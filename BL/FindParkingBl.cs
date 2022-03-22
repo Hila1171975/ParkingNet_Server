@@ -31,7 +31,7 @@ namespace BL
                 freeParking(parkingList[i].Id, rent.EntryDate, rent.LeavingDate, rent.EntryHour, rent.LeavingHour);
             }
 
-            //אתחול רשימת המרחקים בין כתובת המקור לכתובת היעד עבור כל החניות הפנוית
+            //אתחול רשימת המרחקים בין כתובת היעד לכתובת החניה עבור כל החניות הפנוית
             for (int i = 0; i < freeParkingList.Count; i++)
             {
                 distanceList.Add(GetDuration(home_lat, home_lan, freeParkingList[i].Lat, freeParkingList[i].Lan));
@@ -62,7 +62,7 @@ namespace BL
             double minDistance; //משתנה שיכיל את המרחק המינימלי הנוכחי
             int indexOfMin; //משתנה שיכיל את האינדקס של המרחק המינימלי הנוכחי
 
-            //חיפוש 3 חניות עם המרחק המינימלי ביותר
+            //חיפוש 3 חניות או פחות עם המרחק המינימלי ביותר
             for (int i = 0; i < numDidplay; i++)
             {
                 minDistance = distanceList.Min(); //נכניס לתוך המשתנה את המרחק המינימלי ביותר

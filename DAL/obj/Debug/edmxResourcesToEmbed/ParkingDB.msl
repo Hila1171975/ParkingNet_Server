@@ -13,23 +13,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CITY">
-      <EntityTypeMapping TypeName="PARKING_NETModel.CITY">
-        <MappingFragment StoreEntitySet="CITY">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="NAME" ColumnName="NAME" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PARKING">
       <EntityTypeMapping TypeName="PARKING_NETModel.PARKING">
         <MappingFragment StoreEntitySet="PARKING">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
-          <ScalarProperty Name="CITY_ID" ColumnName="CITY_ID" />
-          <ScalarProperty Name="STREET" ColumnName="STREET" />
-          <ScalarProperty Name="HOUSE_NUM" ColumnName="HOUSE_NUM" />
+          <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
           <ScalarProperty Name="PAY_PER_HOUR" ColumnName="PAY_PER_HOUR" />
+          <ScalarProperty Name="LAT" ColumnName="LAT" />
+          <ScalarProperty Name="LAN" ColumnName="LAN" />
           <ScalarProperty Name="ELECTRONIC_GATE" ColumnName="ELECTRONIC_GATE" />
           <ScalarProperty Name="INDOOR" ColumnName="INDOOR" />
           <ScalarProperty Name="SHADY" ColumnName="SHADY" />
@@ -49,42 +41,20 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
           <ScalarProperty Name="PARKING_ID" ColumnName="PARKING_ID" />
-          <ScalarProperty Name="ENTRY_HOUR" ColumnName="ENTRY_HOUR" />
+          <ScalarProperty Name="ENTERY_HOUR" ColumnName="ENTERY_HOUR" />
           <ScalarProperty Name="LEAVING_HOUR" ColumnName="LEAVING_HOUR" />
-          <ScalarProperty Name="ENTRY_DATE" ColumnName="ENTRY_DATE" />
+          <ScalarProperty Name="ENTERY_DATE" ColumnName="ENTERY_DATE" />
           <ScalarProperty Name="LEAVING_DATE" ColumnName="LEAVING_DATE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="PARKING_NETModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="USERS">
       <EntityTypeMapping TypeName="PARKING_NETModel.USERS">
         <MappingFragment StoreEntitySet="USERS">
-          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />
           <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
           <ScalarProperty Name="PHONE" ColumnName="PHONE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="POINT">
-      <EntityTypeMapping TypeName="PARKING_NETModel.POINT">
-        <MappingFragment StoreEntitySet="POINT">
-          <ScalarProperty Name="PARKING_ID" ColumnName="PARKING_ID" />
-          <ScalarProperty Name="Y" ColumnName="Y" />
-          <ScalarProperty Name="X" ColumnName="X" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

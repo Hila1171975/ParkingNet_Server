@@ -22,3 +22,27 @@ C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\DAL\obj\Deb
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\DAL\obj\Debug\DAL.dll
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\DAL\obj\Debug\DAL.pdb
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\bin\Debug\DAL.dll.config
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\bin\Debug\DAL.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\bin\Debug\DAL.pdb
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\bin\Debug\EntityFramework.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\bin\Debug\EntityFramework.xml
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\obj\Debug\DAL.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\DAL\obj\Debug\DAL.pdb
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\obj\Debug\DAL.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\obj\Debug\DAL.pdb
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\bin\Debug\DAL.dll.config
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\bin\Debug\DAL.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\bin\Debug\DAL.pdb
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\bin\Debug\EntityFramework.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\bin\Debug\EntityFramework.xml
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\DAL\obj\Debug\DAL.csproj.CopyComplete

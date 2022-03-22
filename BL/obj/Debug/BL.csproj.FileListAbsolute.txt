@@ -30,3 +30,47 @@ C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debu
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debug\BL.dll
 C:\Users\hila1\Desktop\פרויקט שנה ג\ParkingNet_Server_Git1\BL\obj\Debug\BL.pdb
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\BL.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\BL.pdb
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\DAL.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\Entities.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\EntityFramework.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\GoogleApi.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\DAL.pdb
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\DAL.dll.config
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\Entities.pdb
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\EntityFramework.xml
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\GoogleApi.xml
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\obj\Debug\BL.dll
+C:\Users\This_User\OneDrive\שולחן העבודה\ParkingNet_Server\BL\obj\Debug\BL.pdb
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\BL.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\BL.pdb
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\BouncyCastle.Crypto.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\DAL.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\Entities.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\EntityFramework.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\GoogleApi.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\Newtonsoft.Json.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\DAL.pdb
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\DAL.dll.config
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\Entities.pdb
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\BouncyCastle.Crypto.xml
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\EntityFramework.xml
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\GoogleApi.xml
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\bin\Debug\Newtonsoft.Json.xml
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\obj\Debug\BL.csproj.CopyComplete
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\obj\Debug\BL.dll
+D:\Studies\פרויקט שנה ג\Git\ParkingNet_Server\BL\obj\Debug\BL.pdb
