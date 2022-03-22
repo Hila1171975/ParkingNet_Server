@@ -2,7 +2,6 @@
 using Entities;
 using GoogleApi.Entities.Maps.Common;
 using GoogleApi.Entities.Maps.Directions.Request;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class FindParkingBl
+    public class FindParkingBl
     {
-        List<ParkingEntities> parkingList = new List<ParkingEntities>(); // רשימה של החניות
-        List<ParkingEntities> freeParkingList = new List<ParkingEntities>(); // רשימה של החניות הפנויות
-        List<RentEntities> Rental_list; //רשימת השכרות
-        List<double> distanceList = new List<double>(); //רשימה של כל המרחקים בין המיקום הנוכחי לבין רשימת החניות הפנויות                                                  
-        List<ParkingEntities> closestParkings = new List<ParkingEntities>(); //רשימה שתכיל את החניות הקרובות
+        public static List<ParkingEntities> parkingList = new List<ParkingEntities>(); // רשימה של החניות
+        public static List<ParkingEntities> freeParkingList = new List<ParkingEntities>(); // רשימה של החניות הפנויות
+        public static List<RentEntities> Rental_list; //רשימת השכרות
+        public static List<double> distanceList = new List<double>(); //רשימה של כל המרחקים בין המיקום הנוכחי לבין רשימת החניות הפנויות                                                  
+        public static List<ParkingEntities> closestParkings = new List<ParkingEntities>(); //רשימה שתכיל את החניות הקרובות
 
         //מחזירה רשימה של שלוש חניות קרובות
-        public List<ParkingEntities> start(double home_lat, double home_lan, RentEntities rent)
+        public static List<ParkingEntities> start(double home_lat, double home_lan, RentEntities rent)
         {
             parkingList = ParkingBl.GetParkingList();//שליפת כל החניות
 
@@ -82,7 +81,7 @@ namespace BL
 
         //פונקציה המקבלת קוד חנייה ובודקת האם החניה פנויה להשכרה בשעה והתאריך הרצויים
         //במקרה שהחניה פנויה הפונקציה מוסיפה את החניה לרשימת החניות הפנויות
-        public void freeParking(int idParking, DateTime entryDate, DateTime leavingDate, DateTime entryHour, DateTime leavingHour)
+        public static void freeParking(int idParking, DateTime entryDate, DateTime leavingDate, DateTime entryHour, DateTime leavingHour)
         {
             bool free = true; //בתחילה נגדיר שהחנייה פנויה
             Rental_list = RentBl.GetRentList();  //נכניס לרשימת ההשכרות את כל ההשכרות הקיימות
@@ -113,7 +112,7 @@ namespace BL
         }
 
         //מקבלת 2 כתובות: כתובת יעד וכתובת מקור ומחזירה מרחק לפי זמן נסיעה
-        public double GetDuration(double lat_1, double lng_1, double lat_2, double lng_2)
+        public static double GetDuration(double lat_1, double lng_1, double lat_2, double lng_2)
         {
             DirectionsRequest request = new DirectionsRequest();
             request.Key = "AIzaSyALloXnE20WhqF0szj5Ak2C6074nQQk9uE";//key of google maps

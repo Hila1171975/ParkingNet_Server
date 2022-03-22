@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,16 @@ namespace DAL
         //הוספת חניה
          public static void addParking(PARKING p)
         {
-            db.PARKING.Add(p);
-            db.SaveChanges();
+            try
+                {
+                db.PARKING.Add(p);
+                db.SaveChanges();
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            
         }
 
         // מחיקת חניה
