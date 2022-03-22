@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -15,16 +16,17 @@ namespace Parking_NET_Project.Controllers
 
         // חיפוש 3 חניות הקרובות ביותר
         [HttpPost]
-        [Route("Search3Parkings/{home_lat}/{home_lan}")]
+        [Route("Search3Parkings/{home_lat}/{home_lan}/1")]
         public IHttpActionResult Search3Parkings(double home_lat, double home_lan, [FromBody] RentEntities r)
         {
             try
-            {
+            { 
                 return Ok(FindParkingBl.start(home_lat, home_lan, r));
             }
-            catch
+            catch(Exception e)
             {
-                return Ok(true);
+                Debug.WriteLine(e);
+                return Ok(e);
             }
         }
     }

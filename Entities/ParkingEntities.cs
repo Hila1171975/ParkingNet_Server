@@ -12,7 +12,7 @@ namespace Entities
         //  שמות כמו באנגולר 
         public short Id { get; set; }
         public short UserId { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
         public double Lat { get; set; }
         public double Lan { get; set; }
         public double PayPerHour { get; set; }
@@ -36,7 +36,7 @@ namespace Entities
             {
                 Id = p.ID,
                 UserId = p.USER_ID,
-                Adress = p.ADRESS,
+                Address = p.ADRESS,
                 Lat = p.LAT,
                 Lan = p.LAN,
                 PayPerHour = p.PAY_PER_HOUR,
@@ -62,7 +62,7 @@ namespace Entities
             {
                 ID = p.Id,
                 USER_ID = p.UserId,
-                ADRESS = p.Adress,
+                ADRESS = p.Address,
                 LAT = p.Lat,
                 LAN = p.Lan,
                 PAY_PER_HOUR = p.PayPerHour,
