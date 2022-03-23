@@ -2,8 +2,6 @@
 using Entities;
 using GoogleApi.Entities.Maps.Common;
 using GoogleApi.Entities.Maps.Directions.Request;
-using GoogleApi.Entities.Maps.Directions.Response;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +33,7 @@ namespace BL
                 freeParking(parkingList[i].Id, rent.EntryDate, rent.LeavingDate, rent.EntryHour, rent.LeavingHour);
             }
 
-            //אתחול רשימת המרחקים בין כתובת המקור לכתובת היעד עבור כל החניות הפנוית
+            //אתחול רשימת המרחקים בין כתובת היעד לכתובת החניה עבור כל החניות הפנוית
             for (int i = 0; i < freeParkingList.Count; i++)
             {
                 distanceList.Add(GetDuration(home_lat, home_lan, freeParkingList[i].Lat, freeParkingList[i].Lan));
@@ -66,7 +64,7 @@ namespace BL
             double minDistance; //משתנה שיכיל את המרחק המינימלי הנוכחי
             int indexOfMin; //משתנה שיכיל את האינדקס של המרחק המינימלי הנוכחי
 
-            //חיפוש 3 חניות עם המרחק המינימלי ביותר
+            //חיפוש 3 חניות או פחות עם המרחק המינימלי ביותר
             for (int i = 0; i < numDidplay; i++)
             {
                 minDistance = distanceList.Min(); //נכניס לתוך המשתנה את המרחק המינימלי ביותר
@@ -115,19 +113,13 @@ namespace BL
                 freeParkingList.Add(ParkingBl.GetParkingById(idParking));
         }
 
-
-
-
         //מקבלת 2 כתובות: כתובת יעד וכתובת מקור ומחזירה מרחק לפי זמן נסיעה
         public static double GetDuration(double lat_1, double lng_1, double lat_2, double lng_2)
         {
             DirectionsRequest request = new DirectionsRequest();
-            request.Key = "AIzaSyC6wEMLBoWos4fb1Vgzmukt25AzX_6ogcw";//key of google maps
-            // request.Key = "AIzaSyALloXnE20WhqF0szj5Ak2C6074nQQk9uE";//key of google maps
-            request.Origin = new Location(lat_1, lng_1);
-            request.Destination = new Location(lat_2, lng_2);
-            
-            
+            request.Key = "AIzaSyALloXnE20WhqF0szj5Ak2C6074nQQk9uE";//key of google maps
+            //request.Origin = new Location(lat_1, lng_1);
+            //request.Destination = new Location(lat_2, lng_2);
             var response = GoogleApi.GoogleMaps.Directions.Query(request);
             double duration;
             if (response.Routes.Count() > 0)

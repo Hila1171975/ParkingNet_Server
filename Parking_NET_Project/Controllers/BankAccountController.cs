@@ -82,6 +82,13 @@ namespace Parking_NET_Project.Controllers
         }
 
 
+        // שליפת רשימת חניות לפי קוד משתמש
+        [HttpGet]
+        [Route("GetBankAccountByUserId/{userId}")]
+        public IHttpActionResult GetBankAccountByUserId(int userId)
+        {
+            return Ok(BankAccountBl.GetBankAccountByUserId(userId));
+        }
 
 
     }
