@@ -4,3 +4,7 @@
 
 /.vs/ParkingNet_Server/v16/.suo
 /.vs/ParkingNet_Server_Git1/config/applicationhost.config
+/Parking_NET_Project/bin/BouncyCastle.Crypto.dll
+/Parking_NET_Project/bin/BouncyCastle.Crypto.xml
+/Parking_NET_Project/bin/GoogleApi.dll
+/Parking_NET_Project/bin
