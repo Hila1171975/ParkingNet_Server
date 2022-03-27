@@ -14,15 +14,20 @@ namespace BL
 {
     public class FindParkingBl
     {
-        public static List<ParkingEntities> parkingList = new List<ParkingEntities>(); // רשימה של החניות
-        public static List<ParkingEntities> freeParkingList = new List<ParkingEntities>(); // רשימה של החניות הפנויות
+        public static List<ParkingEntities> parkingList;
+        public static List<ParkingEntities> freeParkingList;
         public static List<RentEntities> Rental_list; //רשימת השכרות
-        public static List<double> distanceList = new List<double>(); //רשימה של כל המרחקים בין המיקום הנוכחי לבין רשימת החניות הפנויות                                                  
-        public static List<ParkingEntities> closestParkings = new List<ParkingEntities>(); //רשימה שתכיל את החניות הקרובות
+        public static List<double> distanceList;
+        public static List<ParkingEntities> closestParkings;
 
         //מחזירה רשימה של שלוש חניות קרובות
         public static List<ParkingEntities> start(double home_lat, double home_lan, RentEntities rent)
         {
+            parkingList = new List<ParkingEntities>(); // רשימה של החניות
+            freeParkingList = new List<ParkingEntities>(); // רשימה של החניות הפנויות
+            distanceList = new List<double>(); //רשימה של כל המרחקים בין המיקום הנוכחי לבין רשימת החניות הפנויות 
+            closestParkings = new List<ParkingEntities>(); //רשימה שתכיל את החניות הקרובות
+
             parkingList = ParkingBl.GetParkingList();//שליפת כל החניות
 
             //סינון רק חנויות פנויות
@@ -38,14 +43,15 @@ namespace BL
             {
                 distanceList.Add(GetDuration(home_lat, home_lan, freeParkingList[i].Lat, freeParkingList[i].Lan));
             }
-            int len = distanceList.Count;
+
             //סינון רשימת החניות הפנויות ורשימת המרחקים כך שהם יכילו רק מרחקים שזמן הנסיעה שלהם קטן מ-5 
-            for (int i = 0; i <= len; i++)
+            for (int i = 0; i < distanceList.Count; i++)
             {
                 if (distanceList[i] > 5)
                 {
                     distanceList.Remove(distanceList[i]);
                     freeParkingList.Remove(freeParkingList[i]);
+                    i--;
                 }
             }
 
