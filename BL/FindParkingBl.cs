@@ -56,8 +56,6 @@ namespace BL
                     distanceList.Remove(distanceList[i]); 
                     freeParkingList.Remove(freeParkingList[i]);
                     i--;
-                    distanceList.Remove(distanceList[i]);
-                    freeParkingList.Remove(freeParkingList[i]);
                 }
             }
 
