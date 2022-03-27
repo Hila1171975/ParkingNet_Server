@@ -27,9 +27,11 @@ namespace BL
             for (int i = 0; i < parkingList.Count; i++) //מעבר על כל רשימת החניות
             {
                 if (parkingList[i].Lan == 0 && parkingList[i].Lat == 0)
+                {
                     parkingList.Remove(parkingList[i]);
+                    i--;
+                }         
             }
-
             //סינון רק חניות פנויות
             for (int i = 0; i < parkingList.Count; i++) //מעבר על כל רשימת החניות
             {
@@ -50,7 +52,8 @@ namespace BL
                 if(distanceList[i] > 5)
                 {
                     distanceList.Remove(distanceList[i]); 
-                    freeParkingList.Remove(freeParkingList[i]);    
+                    freeParkingList.Remove(freeParkingList[i]);
+                    i--;
                 }
             }
 
@@ -98,6 +101,7 @@ namespace BL
                 if (idParking == Rental_list[i].ParkingId)
                 {
                     //נבצע בדיקה האם החניה רצויה בתאריך/ים של ההשכרה הנוכחית
+
                     if ((Rental_list[i].EntryDate.Date >= entryDate.Date && Rental_list[i].LeavingDate.Date <= leavingDate.Date)
                         || (Rental_list[i].EntryDate.Date < entryDate.Date && Rental_list[i].LeavingDate.Date > entryDate.Date)
                         || (Rental_list[i].EntryDate.Date < leavingDate.Date && Rental_list[i].LeavingDate.Date > entryDate.Date))

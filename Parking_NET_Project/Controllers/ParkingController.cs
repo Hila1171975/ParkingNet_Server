@@ -121,7 +121,7 @@ namespace Parking_NET_Project.Controllers
         public string[] uploadImage()
         {
             var httpRequest = HttpContext.Current.Request;
-            string filePath = @"D:\Studies\פרויקט שנה ג\Git\ParkingNET\src\assets\gallery\";
+            string filePath = @"D:\Studies\Final-Project\Git\ParkingNetNew\src\assets\gallery\";
             string name = "", fileName = "";
             string[] filesNames = new string[3];
 
