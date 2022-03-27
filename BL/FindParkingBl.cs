@@ -23,7 +23,14 @@ namespace BL
         {
             parkingList = ParkingBl.GetParkingList();//שליפת כל החניות
 
-            //סינון רק חנויות פנויות
+            //הסרת החניות הלא זמינות מרשימת החניות
+            for (int i = 0; i < parkingList.Count; i++) //מעבר על כל רשימת החניות
+            {
+                if (parkingList[i].Lan == 0 && parkingList[i].Lat == 0)
+                    parkingList.Remove(parkingList[i]);
+            }
+
+            //סינון רק חניות פנויות
             for (int i = 0; i < parkingList.Count; i++) //מעבר על כל רשימת החניות
             {
                 //עבור כל חניה
@@ -115,7 +122,7 @@ namespace BL
         public static double GetDuration(double lat_1, double lng_1, double lat_2, double lng_2)
         {
             DirectionsRequest request = new DirectionsRequest();
-            request.Key = "AIzaSyALloXnE20WhqF0szj5Ak2C6074nQQk9uE";//key of google maps
+            request.Key = "AIzaSyC6wEMLBoWos4fb1Vgzmukt25AzX_6ogcw";//key of google maps  
             request.Origin = new Location(lat_1, lng_1);
             request.Destination = new Location(lat_2, lng_2);
             var response = GoogleApi.GoogleMaps.Directions.Query(request);
