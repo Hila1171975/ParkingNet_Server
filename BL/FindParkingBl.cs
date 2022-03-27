@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace BL
 {
     public class FindParkingBl
@@ -45,22 +47,24 @@ namespace BL
             {
                 distanceList.Add(GetDuration(home_lat, home_lan, freeParkingList[i].Lat, freeParkingList[i].Lan));
             }
-
+            int len = distanceList.Count;
             //סינון רשימת החניות הפנויות ורשימת המרחקים כך שהם יכילו רק מרחקים שזמן הנסיעה שלהם קטן מ-5 
-            for (int i = 0; i < distanceList.Count; i++)
+            for (int i = 0; i <= len; i++)
             {
-                if(distanceList[i] > 5)
+                if (distanceList[i] > 5)
                 {
                     distanceList.Remove(distanceList[i]); 
                     freeParkingList.Remove(freeParkingList[i]);
                     i--;
+                    distanceList.Remove(distanceList[i]);
+                    freeParkingList.Remove(freeParkingList[i]);
                 }
             }
 
             //במקרה ורשימת החניות הפנויות לאחר הסינון קטן מ-3 נציג פחות חניות
             int numDidplay = 3; //ברירת המחדל תהיה הצגת 3 חניות
             //כל עוד רשימת החניות הפנויות קטנה ממספר החניות שנרצה להציג- נקטין את מספר החניות שנרצה להציג
-            while (freeParkingList.Count < numDidplay) 
+            while (freeParkingList.Count < numDidplay)
                 numDidplay--;
 
             //במקרה ולא קיים חניות פנויות להצגה, נחזיר כבר מעכשיו רשימת חניות ריקה
@@ -68,7 +72,7 @@ namespace BL
                 return closestParkings;
 
             //רשימה שתכיל את האינדקסים של המרחקים הקטנים ביותר
-            List<int> MinDistanceIndex=new List<int>();
+            List<int> MinDistanceIndex = new List<int>();
             double minDistance; //משתנה שיכיל את המרחק המינימלי הנוכחי
             int indexOfMin; //משתנה שיכיל את האינדקס של המרחק המינימלי הנוכחי
 
@@ -126,7 +130,7 @@ namespace BL
         public static double GetDuration(double lat_1, double lng_1, double lat_2, double lng_2)
         {
             DirectionsRequest request = new DirectionsRequest();
-            request.Key = "AIzaSyC6wEMLBoWos4fb1Vgzmukt25AzX_6ogcw";//key of google maps  
+            request.Key = "AIzaSyALloXnE20WhqF0szj5Ak2C6074nQQk9uE";//key of google maps
             request.Origin = new Location(lat_1, lng_1);
             request.Destination = new Location(lat_2, lng_2);
             var response = GoogleApi.GoogleMaps.Directions.Query(request);
