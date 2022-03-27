@@ -38,9 +38,9 @@ namespace BL
             {
                 distanceList.Add(GetDuration(home_lat, home_lan, freeParkingList[i].Lat, freeParkingList[i].Lan));
             }
-
+            int len = distanceList.Count;
             //סינון רשימת החניות הפנויות ורשימת המרחקים כך שהם יכילו רק מרחקים שזמן הנסיעה שלהם קטן מ-5 
-            for (int i = 0; i < distanceList.Count; i++)
+            for (int i = 0; i <= len; i++)
             {
                 if (distanceList[i] > 5)
                 {
@@ -117,9 +117,12 @@ namespace BL
         public static double GetDuration(double lat_1, double lng_1, double lat_2, double lng_2)
         {
             DirectionsRequest request = new DirectionsRequest();
-            request.Key = "AIzaSyALloXnE20WhqF0szj5Ak2C6074nQQk9uE";//key of google maps
-            //request.Origin = new Location(lat_1, lng_1);
-            //request.Destination = new Location(lat_2, lng_2);
+            
+            request.Key = "AIzaSyC6wEMLBoWos4fb1Vgzmukt25AzX_6ogcw";//key of google maps
+
+            //request.Key = "AIzaSyALloXnE20WhqF0szj5Ak2C6074nQQk9uE";
+            request.Origin = new Location(lat_1, lng_1);
+            request.Destination = new Location(lat_2, lng_2);
             var response = GoogleApi.GoogleMaps.Directions.Query(request);
             double duration;
             if (response.Routes.Count() > 0)
